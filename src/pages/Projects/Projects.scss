@@ -3,6 +3,7 @@
 .Projects {
   display: flex;
   justify-content: space-evenly;
+  flex-wrap: wrap;
 
   .project-img {
     border: 2px $main-black solid;

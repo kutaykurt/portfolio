@@ -18,10 +18,11 @@ $main-red: #FF4040;
 .App {
     background: rgb(250,250,250);
 background: linear-gradient(160deg, $main-white 88%, $main-black 88%);
-    height: 100vh;
+    min-height: 100vh;
+    height: auto;
 }
 
 .routes-container {
     width: 70%;
-    margin: 100px auto;
+    margin: 80px auto 0px auto;
 }
