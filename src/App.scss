@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway&family=Work+Sans&display=swap');
+
+$main-black: #262626;
+$main-dark-blue: #061829;
+$main-blue: #2989E9;
+$main-yellow: #FFDD4A;
+$main-white: #F5F5F5;
+$main-red: #FF4040;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Work Sans', sans-serif;
+    color: $main-black;
+}
+
+.App {
+    background: rgb(250,250,250);
+background: linear-gradient(160deg, $main-white 88%, $main-black 88%);
+    height: 100vh;
+}
+
+.routes-container {
+    width: 70%;
+    margin: 100px auto;
+}

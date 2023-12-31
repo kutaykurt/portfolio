@@ -1,0 +1,35 @@
+@import '../../App.scss';
+
+.Aboutme {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 120px 0px;
+    color: white;
+    font-size: 1.1rem;
+
+    h4 {
+        font-weight: bold;
+    }
+    
+    .information:nth-child(odd) {
+        
+    }
+    
+    .information:nth-child(even) {
+    }
+    
+    .information {
+        max-width: 900px;
+        padding: 20px;
+        border-bottom: 1px black solid;
+        padding: 5px 0px;
+        margin-bottom: 30px;
+    }
+    
+    .mein-bild {
+        height: 600px;
+        border: 2px $main-dark-blue solid;
+        border-radius: 20px;
+    }
+}

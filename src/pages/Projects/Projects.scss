@@ -1,0 +1,25 @@
+@import '../../App.scss';
+
+.Projects {
+  display: flex;
+  justify-content: space-evenly;
+
+  .project-img {
+    border: 2px $main-black solid;
+    width: 500px;
+    margin: 20px 0px;
+
+    &:hover {
+      border-color: $main-yellow; 
+    }
+  }
+
+  h4 {
+    text-decoration: underline;
+  }
+
+  .project-information {
+    height: 260px;
+    width: 500px;
+  }
+}
