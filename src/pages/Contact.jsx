@@ -11,6 +11,14 @@ const Contact = () => {
 
     const sendEmail = (e) => {
         e.preventDefault();
+
+        // Debug check for environment variables
+        if (!import.meta.env.VITE_EMAILJS_SERVICE_ID || !import.meta.env.VITE_EMAILJS_TEMPLATE_ID || !import.meta.env.VITE_EMAILJS_PUBLIC_KEY) {
+            console.error('EmailJS configuration missing! Please check your .env file.');
+            setStatus('error');
+            return;
+        }
+
         setLoading(true);
 
         emailjs.sendForm(
@@ -20,11 +28,11 @@ const Contact = () => {
             import.meta.env.VITE_EMAILJS_PUBLIC_KEY
         )
             .then((result) => {
-                console.log(result.text);
+                console.log('SUCCESS!', result.text);
                 setStatus('success');
                 form.current.reset();
             }, (error) => {
-                console.log(error.text);
+                console.error('FAILED...', error);
                 setStatus('error');
             })
             .finally(() => {
