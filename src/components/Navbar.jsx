@@ -52,7 +52,7 @@ const Navbar = () => {
                     <motion.ul
                         initial={{ opacity: 0, y: -20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        className="mobile-links glass"
+                        className="mobile-links"
                     >
                         {navLinks.map((link) => (
                             <li key={link.path}>

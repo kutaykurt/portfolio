@@ -8,6 +8,16 @@
   --glass-border: rgba(255, 255, 255, 0.1);
   --font-main: 'Outfit', sans-serif;
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Fluid Typography */
+  --fs-h1: clamp(2.5rem, 8vw, 4.5rem);
+  --fs-h2: clamp(1.8rem, 5vw, 3rem);
+  --fs-h3: clamp(1.4rem, 3vw, 1.8rem);
+  --fs-body: clamp(1rem, 1.2vw, 1.1rem);
+
+  /* Responsive Spacing */
+  --section-padding: clamp(60px, 10vw, 120px);
+  --container-padding: clamp(15px, 5vw, 40px);
 }
 
 * {
@@ -20,6 +30,7 @@ body {
   background-color: var(--bg-color);
   color: var(--text-color);
   font-family: var(--font-main);
+  font-size: var(--fs-body);
   line-height: 1.6;
   overflow-x: hidden;
 }
@@ -35,7 +46,7 @@ ul {
 }
 
 section {
-  padding: 100px 20px;
+  padding: var(--section-padding) var(--container-padding);
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -69,6 +80,7 @@ section {
 
 .gradient-text {
   background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }

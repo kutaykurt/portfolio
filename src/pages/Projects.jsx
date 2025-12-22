@@ -1,24 +1,29 @@
 import { motion } from 'framer-motion';
 import './Projects.css';
+import dilyuvamFull from '../assets/dilyuvam_full.png';
 
 const projects = [
     {
-        title: 'E-Commerce Plattform',
-        description: 'Ein moderner Online-Shop mit Echtzeit-Bestandsverwaltung und sicherer Zahlungsabwicklung.',
-        tags: ['React', 'Node.js', 'MongoDB'],
-        image: 'https://images.unsplash.com/photo-1557821552-17105176677c?auto=format&fit=crop&w=800&q=80'
+        title: 'DilYuvam',
+        description: 'Eine interaktive Sprachlernplattform mit Fokus auf Wortschatzerweiterung und Fortschrittsanalyse.',
+        tags: ['React', 'Redux Toolkit', 'Node.js', 'Supabase'],
+        image: dilyuvamFull,
+        isLogo: true,
+        link: 'https://www.dilyuvam.com'
     },
     {
         title: 'KI-Dashboard',
         description: 'Datenvisualisierungstool für KI-Modelle mit interaktiven Graphen und Analysen.',
         tags: ['Next.js', 'Python', 'Tailwind'],
-        image: 'https://images.unsplash.com/photo-1551288049-bbda38a5f36e?auto=format&fit=crop&w=800&q=80'
+        image: 'https://images.unsplash.com/photo-1551288049-bbda38a5f36e?auto=format&fit=crop&w=800&q=80',
+        link: '#'
     },
     {
         title: 'Fintech App',
         description: 'Mobile-first Anwendung für persönliches Finanzmanagement und Investment-Tracking.',
         tags: ['React Native', 'Firebase', 'Redux'],
-        image: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80'
+        image: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80',
+        link: '#'
     }
 ];
 
@@ -44,7 +49,7 @@ const Projects = () => {
                             transition={{ delay: index * 0.1 }}
                             className="project-card glass"
                         >
-                            <div className="project-image">
+                            <div className={`project-image ${project.isLogo ? 'logo-container' : ''}`}>
                                 <img src={project.image} alt={project.title} />
                             </div>
                             <div className="project-info">
@@ -55,6 +60,16 @@ const Projects = () => {
                                         <span key={tag} className="tag">{tag}</span>
                                     ))}
                                 </div>
+                                {project.link && (
+                                    <a
+                                        href={project.link}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="project-link-btn"
+                                    >
+                                        Zum Projekt
+                                    </a>
+                                )}
                             </div>
                         </motion.div>
                     ))}

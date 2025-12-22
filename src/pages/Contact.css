@@ -1,5 +1,5 @@
 .contact-page {
-    padding-top: 100px;
+    padding-top: 40px;
 }
 
 .contact-grid {
@@ -39,7 +39,7 @@
 }
 
 .info-value {
-    font-size: 1.1rem;
+    font-size: clamp(0.9rem, 1.5vw, 1.1rem);
     font-weight: 500;
 }
 
