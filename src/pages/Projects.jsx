@@ -1,76 +1,141 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import './Projects.css';
-import dilyuvamFull from '../assets/dilyuvam_full.png';
+import dilyuvamLogo from '../assets/dilyuvam_logo.png';
 import adminDashboardImg from '../assets/admin_dashboard.png';
-import togespotLogo from '../assets/togespot_logo.png';
 
 const projects = [
     {
-        title: 'Togespot',
-        description: 'Eine hochmoderne Social-Media-Plattform für vernetztes Arbeiten und Entertainment.',
-        longDescription: 'Togespot ist eine All-in-One Social-Media-Plattform, die Kommunikation, Unterhaltung und Karriereplanung vereint. Entwickelt mit Next.js und Supabase, bietet sie eine performante und skalierbare Architektur für tausende Nutzer.',
+        title: 'TogeLink',
+        description: 'Plattform für synchronisiertes Videostreaming mit globaler Player-Sync.',
+        longDescription: 'TogeLink ist eine Social Media & Watch-Party Plattform. Sie bietet synchronisiertes Videostreaming mit einem globalen Player-Sync und nutzt Echtzeit-Kommunikation für eine nahtlose User-Experience.',
         features: [
-            'Echtzeit-Chat & WebRTC Video-Calls direkt im Browser',
-            'Watch-Partys für gemeinsames Ansehen von Filmen und Videos',
-            'Dynamisches Gruppen-System mit individuellen Themes',
-            'Integriertes Job-Portal für Karrieremöglichkeiten',
-            'Live-Streaming-Funktionalität für Content Creator',
-            'Discovery-Feed für personalisierte Inhalte und Trends',
-            'Vollständige Supabase-Integration für Auth und Echtzeit-Daten'
+            'Entwicklung mit Next.js 15, React 19 und TypeScript',
+            'WebSocket-Live-Events für Echtzeit-Synchronisation',
+            'Echtzeit-Kommunikation und Chat-System',
+            'Skalierbare Supabase-Backend-Architektur',
+            'Modernes UI/UX Design System'
         ],
-        tags: ['Next.js', 'Supabase', 'TypeScript', 'WebRTC', 'Sass'],
+        tags: ['Next.js 15', 'React 19', 'WebSockets', 'Supabase'],
         image: null,
-        isTextLogo: true,
-        link: 'https://togespot.com'
+        isCustomLogo: true,
+        logoType: 'togelink',
+        link: 'https://togelink.com/de'
+    },
+    {
+        title: 'Apply Tracker',
+        description: 'Produktivitäts-Tool zur Nachverfolgung von Bewerbungsprozessen.',
+        longDescription: 'ApplyTracker ist ein umfassender Bewerbungs-Manager. Ein Privacy-First Ansatz durch optimierte lokale Datenspeicherung (LocalStorage) sorgt für maximale Sicherheit der Nutzerdaten.',
+        features: [
+            'Interaktiver Datums-Navigator',
+            'UX-Animationen mit Framer Motion',
+            'Privacy-First Ansatz via LocalStorage',
+            'Status-Tracking für alle Bewerbungsphasen',
+            'Übersichtliches Dashboard für Karriere-Schritte'
+        ],
+        tags: ['React', 'Framer Motion', 'LocalStorage', 'UX-Design'],
+        image: null,
+        isCustomLogo: true,
+        logoType: 'applytracker',
+        link: 'https://apply-tracker-rho.vercel.app/'
+    },
+    {
+        title: 'KaufWelt',
+        description: 'Ein modernes E-Commerce Erlebnis für qualitativ hochwertige Produkte.',
+        longDescription: 'KaufWelt kombiniert modernes Design mit leistungsstarken E-Commerce Features. Der Fokus liegt auf einer intuitiven Shopping-Experience und einer performanten Nutzeroberfläche.',
+        features: [
+            'Redux-basiertes State Management für den Warenkorb',
+            'Performantes Produkt-Listing und Filter',
+            'Vollständig responsives Interface'
+        ],
+        tags: ['React', 'Redux', 'Node.js'],
+        image: null,
+        isCustomLogo: true,
+        logoType: 'kaufwelt',
+        link: 'https://kaufwelt.vercel.app/'
     },
     {
         title: 'DilYuvam',
-        description: 'Eine interaktive Sprachlernplattform mit Fokus auf Wortschatzerweiterung und Fortschrittsanalyse.',
-        longDescription: 'DilYuvam hilft Sprachlernenden dabei, ihren Wortschatz effizient zu erweitern. Durch personalisierte Listen und KI-gestützte Analysen wird der Lernprozess optimiert.',
+        description: 'Interaktive E-Learning-App mit integriertem Redux-Prüfungssystem.',
+        longDescription: 'DilYuvam ist eine Sprachlern-Website, die High-Performance mit sicherer Authentifizierung kombiniert. Ein integriertes Prüfungssystem hilft bei der Wortschatzerweiterung.',
         features: [
-            'Detaillierte Fortschrittsstatistiken und Lernanalysen',
-            'Vokabeltraining mit intelligentem Wiederholungssystem',
-            'Individuelle Wortlisten für gezieltes Lernen',
-            'Supabase-Backend für sichere Datenspeicherung',
-            'Responsive Design für das Lernen unterwegs'
+            'Integrierte Redux-Prüfungssysteme',
+            'Anbindung von Stripe für sichere Zahlungsabwicklung',
+            'Fokus auf High-Performance und Sicherheit',
+            'Sichere Authentifizierung via Supabase',
+            'Fortschrittsanalyse für Lernende'
         ],
-        tags: ['React', 'Redux Toolkit', 'Node.js', 'Supabase'],
-        image: dilyuvamFull,
-        isLogo: true,
+        tags: ['React', 'Redux Toolkit', 'Stripe', 'Supabase'],
+        image: dilyuvamLogo,
+        isCustomLogo: true,
+        logoType: 'dilyuvam',
         link: 'https://www.dilyuvam.com'
     },
     {
         title: 'Admin Dashboard',
-        description: 'Ein umfassendes Dashboard zur Verwaltung von Benutzerdaten, Statistiken und Systemeinstellungen.',
-        longDescription: 'Dieses Dashboard wurde entwickelt, um komplexe Datenstrukturen einfach visualisierbar und bearbeitbar zu machen. Es nutzt modernste UI-Komponenten für maximale Effizienz.',
+        description: 'Business-Interface zur Verwaltung komplexer Business-Module.',
+        longDescription: 'Das Admin Dashboard bietet ein professionelles Interface zur Verwaltung von Daten. Durch die Implementierung von Kanban-Boards und interaktiven Charts ist es das ideale Tool für Business-Workflows.',
         features: [
-            'Interaktive Graphen und Datenvisualisierungen',
-            'Komplettes User-Management-System',
-            'Dark/Light Mode Unterstützung',
-            'Integration von Syncfusion-Komponenten für professionelle Tabellen',
-            'Theme-Anpassungen in Echtzeit'
+            'Implementierung von Kanban-Boards',
+            'Interaktive Daten-Charts für Business-Analysen',
+            'Entwickelt mit React & TypeScript für Typsicherheit',
+            'Skalierbare Architektur für komplexe Module',
+            'Intuitive Verwaltung von Systemeinstellungen'
         ],
-        tags: ['React', 'Syncfusion', 'Tailwind', 'Context API'],
-        image: adminDashboardImg,
+        tags: ['React', 'TypeScript', 'Kanban', 'Charts'],
+        image: null,
+        isCustomLogo: true,
+        logoType: 'admindashboard',
         link: 'https://admin-dashboard-two-swart-28.vercel.app/'
-    },
-    {
-        title: 'Fintech App',
-        description: 'Mobile-first Anwendung für persönliches Finanzmanagement und Investment-Tracking.',
-        longDescription: 'Eine moderne App zur Verwaltung persönlicher Ausgaben und Investitionen. Mit Fokus auf Sicherheit und Benutzerfreundlichkeit bietet sie eine klare Übersicht der eigenen Finanzen.',
-        features: [
-            'Transaktions-Tracking mit Kategorisierung',
-            'Investment-Portfolio-Analyse',
-            'Budget-Planung und Sparziele',
-            'Firebase-Integration für sichere Datenhaltung',
-            'Intuitive Mobile-First Benutzeroberfläche'
-        ],
-        tags: ['React Native', 'Firebase', 'Redux'],
-        image: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80',
-        link: '#'
     }
 ];
+
+const LogoRenderer = ({ type }) => {
+    switch (type) {
+        case 'togelink':
+            return (
+                <div className="custom-logo togelink-logo">
+                    <span className="logo-white">TogeLink</span><span className="logo-blue">.com</span>
+                </div>
+            );
+        case 'applytracker':
+            return (
+                <div className="custom-logo applytracker-logo">
+                    <div className="logo-icon">
+                        <div className="circle outer"></div>
+                        <div className="circle middle"></div>
+                        <div className="circle inner"></div>
+                    </div>
+                    <span className="logo-text">ApplyTracker</span>
+                </div>
+            );
+        case 'kaufwelt':
+            return (
+                <div className="custom-logo kaufwelt-logo">
+                    <span className="logo-k">K</span><span className="logo-text">aufWelt</span>
+                </div>
+            );
+        case 'dilyuvam':
+            return (
+                <div className="custom-logo dilyuvam-logo">
+                    <img src={dilyuvamLogo} alt="DilYuvam" />
+                </div>
+            );
+        case 'admindashboard':
+            return (
+                <div className="custom-logo admindashboard-logo">
+                    <div className="logo-icon">
+                        <div className="bar bar-1"></div>
+                        <div className="bar bar-2"></div>
+                        <div className="bar bar-3"></div>
+                    </div>
+                    <span className="logo-text">Dashboard</span>
+                </div>
+            );
+        default:
+            return null;
+    }
+};
 
 const Projects = () => {
     const [selectedProject, setSelectedProject] = useState(null);
@@ -80,11 +145,12 @@ const Projects = () => {
             <section>
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
                     className="section-header"
                 >
                     <h1 className="section-title">Meine <span className="gradient-text">Projekte</span></h1>
-                    <p className="section-subtitle">Eine Übersicht meiner Projekte.</p>
+                    <p className="section-subtitle">Eine Übersicht meiner jüngsten Arbeiten.</p>
                 </motion.div>
 
                 <div className="projects-grid">
@@ -92,13 +158,14 @@ const Projects = () => {
                         <motion.div
                             key={index}
                             initial={{ opacity: 0, y: 30 }}
-                            animate={{ opacity: 1, y: 0 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
                             transition={{ delay: index * 0.1 }}
                             className="project-card glass"
                         >
-                            <div className={`project-image ${project.isLogo ? 'logo-container' : ''} ${project.isTextLogo ? 'text-logo-container' : ''}`}>
-                                {project.isTextLogo ? (
-                                    <span className="text-logo">togespot</span>
+                            <div className={`project-image ${project.isLogo ? 'logo-container' : ''} ${project.isCustomLogo ? 'custom-logo-container' : ''}`}>
+                                {project.isCustomLogo ? (
+                                    <LogoRenderer type={project.logoType} />
                                 ) : (
                                     <img src={project.image} alt={project.title} />
                                 )}
@@ -116,7 +183,7 @@ const Projects = () => {
                                         onClick={() => setSelectedProject(project)}
                                         className="btn-details"
                                     >
-                                        Mehr erfahren
+                                        Details
                                     </button>
                                     {project.link && project.link !== '#' && (
                                         <a
@@ -125,7 +192,7 @@ const Projects = () => {
                                             rel="noopener noreferrer"
                                             className="project-link-btn"
                                         >
-                                            Zum Projekt
+                                            Live Demo
                                         </a>
                                     )}
                                 </div>
@@ -154,9 +221,9 @@ const Projects = () => {
                             <button className="modal-close" onClick={() => setSelectedProject(null)}>&times;</button>
 
                             <div className="modal-header">
-                                {selectedProject.isTextLogo ? (
-                                    <div className="modal-image text-logo-container">
-                                        <span className="text-logo">togespot</span>
+                                {selectedProject.isCustomLogo ? (
+                                    <div className="modal-image custom-logo-container">
+                                        <LogoRenderer type={selectedProject.logoType} />
                                     </div>
                                 ) : (
                                     <img src={selectedProject.image} alt={selectedProject.title} className="modal-image" />

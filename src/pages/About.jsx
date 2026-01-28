@@ -4,9 +4,9 @@ import mypicture from '../assets/Mein-Foto2.JPG';
 
 const About = () => {
     const skills = [
-        { name: 'Frontend', items: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS'] },
-        { name: 'Backend', items: ['Node.js', 'Express', 'PostgreSQL', 'MongoDB'] },
-        { name: 'Tools', items: ['Git', 'Docker', 'AWS', 'Figma'] }
+        { name: 'Frontend', items: ['React 19', 'Next.js 15', 'TypeScript', 'SASS', 'Framer Motion', 'Redux Toolkit'] },
+        { name: 'Backend & Cloud', items: ['Node.js', 'Supabase', 'AWS Cloud Consultant', 'Cloudflare', 'RESTful APIs'] },
+        { name: 'Specialized', items: ['Stripe Integration', 'WebSocket-Live-Events', 'Realtime-Chat', 'UX-Animationen', 'Kanban-Boards'] }
     ];
 
     return (
@@ -20,12 +20,11 @@ const About = () => {
                     >
                         <h1 className="section-title">Über <span className="gradient-text">mich</span></h1>
                         <p className="about-text">
-                            Hallo! Ich bin Kutay Kurt, ein leidenschaftlicher Entwickler mit einem Auge für Details.
-                            Seit über 5 Jahren helfe ich Unternehmen dabei, ihre digitalen Visionen in die Realität umzusetzen.
+                            Hallo! Ich bin Kutay Kurt, ein leidenschaftlicher Full-Stack-Entwickler mit einem Auge für Details.
+                            Seit über 4 Jahren arbeite ich als Freelancer eigenständig an vielfältigen Projekten und setze digitale Konzepte erfolgreich in die Realität um.
                         </p>
                         <p className="about-text">
-                            Mein Fokus liegt auf der Erstellung von performanten Webanwendungen, die nicht nur technisch
-                            einwandfrei sind, sondern auch durch ein exzellentes Nutzererlebnis überzeugen.
+                            Mein Fokus liegt auf der Entwicklung performanter Webanwendungen, die durch exzellentes Design und ein erstklassiges Nutzererlebnis überzeugen. Als selbstständiger Entwickler begleite ich Projekte von der ersten Idee bis zum fertigen Produkt.
                         </p>
 
                         <div className="skills-container">

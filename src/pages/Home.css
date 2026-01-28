@@ -1,145 +1,203 @@
 .home-page {
-    padding-top: 40px;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
 }
 
-.hero {
+.hero-container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 var(--container-padding);
+    position: relative;
+    z-index: 2;
+}
+
+.hero-grid {
     display: grid;
-    grid-template-columns: 1.2fr 1fr;
+    grid-template-columns: 0.9fr 1.1fr;
     align-items: center;
-    gap: 50px;
-    min-height: 80vh;
+    gap: 80px;
+}
+
+.hero-image-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.hero-image-frame {
+    width: clamp(300px, 30vw, 480px);
+    height: clamp(400px, 40vw, 620px);
+    border-radius: 60px;
+    overflow: hidden;
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+}
+
+.hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Removed transition to prevent rendering artifacts/sharpness */
+}
+
+/* Hover effect removed as requested */
+
+.hero-main {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
 }
 
 .hero-subtitle {
     font-size: 1.1rem;
-    font-weight: 400;
+    font-weight: 700;
     color: var(--accent-color);
-    margin-bottom: 10px;
-    letter-spacing: 2px;
+    letter-spacing: 6px;
     text-transform: uppercase;
+    background: rgba(124, 58, 237, 0.05);
+    padding: 8px 16px;
+    border-radius: 8px;
+    display: inline-block;
+    width: fit-content;
 }
 
 .hero-title {
-    font-size: var(--fs-h1);
-    line-height: 1.1;
-    margin-bottom: 20px;
-    font-weight: 800;
+    font-size: clamp(4rem, 7vw, 6.5rem);
+    line-height: 1;
+    font-weight: 950;
+    color: #fff;
+    margin: 0;
+    letter-spacing: -4px;
 }
 
 .hero-description {
-    font-size: clamp(1rem, 1.5vw, 1.2rem);
-    color: rgba(255, 255, 255, 0.7);
-    margin-bottom: 40px;
-    max-width: 600px;
+    font-size: 1.5rem;
+    color: var(--text-secondary);
+    max-width: 650px;
+    line-height: 1.5;
+}
+
+.hero-highlights {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin: 10px 0;
+}
+
+.mini-highlight {
+    padding: 15px;
+    border-radius: 20px;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.mini-highlight .dot {
+    width: 8px;
+    height: 8px;
+    background: var(--accent-color);
+    border-radius: 50%;
+    margin-top: 6px;
+    box-shadow: 0 0 10px var(--accent-color);
+}
+
+.mini-highlight strong {
+    font-size: 0.9rem;
+    color: #fff;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.mini-highlight p {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
 }
 
 .hero-actions {
     display: flex;
-    gap: 15px;
-    flex-wrap: wrap;
+    align-items: center;
+    /* Ensures vertical alignment between button and link */
+    gap: 32px;
+    margin-top: 40px;
 }
 
 .btn-outline {
-    padding: 12px 28px;
-    border-radius: 50px;
-    font-weight: 600;
-    border: 1px solid var(--accent-color);
-    color: var(--text-color);
+    background: linear-gradient(135deg, #f8fafc 0%, #cbd5e1 100%);
+    color: #060608;
+    padding: 16px 40px;
+    border-radius: 100px;
+    font-size: 0.85rem;
+    font-weight: 800;
+    text-decoration: none;
     transition: var(--transition);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    display: inline-block;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 .btn-outline:hover {
-    background: rgba(59, 130, 246, 0.1);
-    transform: translateY(-2px);
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(255, 255, 255, 0.1);
+    filter: brightness(1.1);
 }
 
 .hero-visual {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translateY(-50%);
+    width: 600px;
+    height: 600px;
+    z-index: -1;
+    pointer-events: none;
 }
 
 .hero-blob {
-    width: clamp(200px, 40vw, 400px);
-    height: clamp(200px, 40vw, 400px);
-    background: linear-gradient(45deg, var(--accent-color), #8b5cf6);
-    filter: blur(clamp(40px, 8vw, 80px));
-    opacity: 0.3;
-    border-radius: 50%;
-    animation: pulse 10s infinite alternate;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(124, 58, 237, 0.1) 0%, transparent 70%);
+    filter: blur(80px);
+    animation: drift 20s infinite alternate ease-in-out;
 }
 
-@keyframes pulse {
-    0% {
-        transform: scale(1) translate(0, 0);
+@keyframes drift {
+    from {
+        transform: translate(-5%, -5%) scale(1);
     }
 
-    100% {
-        transform: scale(1.2) translate(10px, -20px);
+    to {
+        transform: translate(5%, 5%) scale(1.1);
     }
 }
 
-.highlight-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(clamp(250px, 30vw, 300px), 1fr));
-    gap: clamp(15px, 2vw, 30px);
-    margin-top: 50px;
-}
+@media (max-width: 1024px) {
+    .home-page {
+        height: auto;
+        min-height: 100vh;
+        overflow-y: auto;
+        padding: 100px 0;
+    }
 
-.highlight-item {
-    padding: clamp(20px, 4vw, 40px);
-    text-align: center;
-    transition: var(--transition);
-}
-
-.highlight-item:hover {
-    transform: translateY(-10px);
-    border-color: var(--accent-color);
-}
-
-.highlight-item h3 {
-    margin-bottom: 15px;
-    font-size: var(--fs-h3);
-}
-
-.highlight-item p {
-    color: rgba(255, 255, 255, 0.6);
-}
-
-@media (max-width: 992px) {
-    .hero {
+    .hero-grid {
         grid-template-columns: 1fr;
         text-align: center;
-        gap: 30px;
+        gap: 40px;
     }
 
-    .hero-content {
-        order: 2;
-    }
-
-    .hero-visual {
-        order: 1;
-        min-height: auto;
+    .hero-main {
+        align-items: center;
     }
 
     .hero-description {
-        margin: 0 auto 30px;
+        margin: 0 auto;
     }
 
-    .hero-actions {
-        justify-content: center;
-    }
-}
-
-@media (max-width: 480px) {
-    .hero-actions {
-        flex-direction: column;
-    }
-
-    .btn-primary,
-    .btn-outline {
+    .hero-highlights {
+        grid-template-columns: 1fr;
         width: 100%;
-        text-align: center;
+        max-width: 400px;
     }
 }
