@@ -1,7 +1,6 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import './Projects.css';
-import dilyuvamLogo from '../assets/dilyuvam_logo.png';
 import adminDashboardImg from '../assets/admin_dashboard.png';
 
 const projects = [
@@ -66,7 +65,7 @@ const projects = [
             'Fortschrittsanalyse für Lernende'
         ],
         tags: ['React', 'Redux Toolkit', 'Stripe', 'Supabase'],
-        image: dilyuvamLogo,
+        image: null,
         isCustomLogo: true,
         logoType: 'dilyuvam',
         link: 'https://www.dilyuvam.com'
@@ -135,7 +134,12 @@ const LogoRenderer = ({ type }) => {
         case 'dilyuvam':
             return (
                 <div className="custom-logo dilyuvam-logo">
-                    <img src={dilyuvamLogo} alt="DilYuvam" />
+                    <div className="logo-icon">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-1 14H5.17L4 17.17V4h15v12zM7 9h2v2H7V9zm3 0h8v2h-8V9zm-3-3h11v2H7V6z" />
+                        </svg>
+                    </div>
+                    <span className="logo-text">Dil<span>Yuvam</span></span>
                 </div>
             );
         case 'admindashboard':
@@ -191,7 +195,7 @@ const Projects = () => {
                             transition={{ delay: index * 0.1 }}
                             className="project-card glass"
                         >
-                            <div className={`project-image ${project.isLogo ? 'logo-container' : ''} ${project.isCustomLogo ? 'custom-logo-container' : ''}`}>
+                            <div className={`project - image ${project.isLogo ? 'logo-container' : ''} ${project.isCustomLogo ? 'custom-logo-container' : ''} `}>
                                 {project.isCustomLogo ? (
                                     <LogoRenderer type={project.logoType} />
                                 ) : (

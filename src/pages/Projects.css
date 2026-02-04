@@ -92,10 +92,38 @@
 }
 
 /* DilYuvam Logo */
-.dilyuvam-logo img {
-    height: 80px;
-    width: auto;
-    filter: drop-shadow(0 0 10px rgba(0, 122, 255, 0.2));
+.dilyuvam-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.dilyuvam-logo .logo-icon {
+    width: 48px;
+    height: 48px;
+    background: var(--accent-blue);
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    box-shadow: 0 10px 20px rgba(14, 165, 233, 0.2);
+}
+
+.dilyuvam-logo .logo-icon svg {
+    width: 26px;
+    height: 26px;
+}
+
+.dilyuvam-logo .logo-text {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--text-color);
+    letter-spacing: -0.5px;
+}
+
+.dilyuvam-logo .logo-text span {
+    color: var(--accent-blue);
 }
 
 /* Lebens-Planer Logo */
