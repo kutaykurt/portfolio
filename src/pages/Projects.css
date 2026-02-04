@@ -25,7 +25,7 @@
 }
 
 .project-card {
-    background: rgba(255, 255, 255, 0.01);
+    background: var(--glass-bg);
     border: 1px solid var(--glass-border);
     border-radius: 24px;
     overflow: hidden;
@@ -35,12 +35,12 @@
 .project-card:hover {
     transform: translateY(-10px);
     border-color: var(--accent-color);
-    background: rgba(255, 255, 255, 0.02);
+    background: var(--secondary-bg);
 }
 
 .project-image {
     height: 180px;
-    background: #0a0a0c;
+    background: var(--bg-color);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -53,14 +53,42 @@
 
 .togelink-logo {
     font-size: 1.8rem;
+    font-weight: 800;
+}
+
+.togelink-logo .logo-white {
+    color: var(--text-color);
+}
+
+.togelink-logo .logo-blue {
+    color: var(--accent-blue);
 }
 
 .applytracker-logo {
     scale: 0.7;
 }
 
+.applytracker-logo .logo-text {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--text-color);
+}
+
 .kaufwelt-logo {
     font-size: 1.8rem;
+    font-weight: 800;
+}
+
+.kaufwelt-logo .logo-k {
+    background: var(--accent-gradient);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 2.5rem;
+}
+
+.kaufwelt-logo .logo-text {
+    color: var(--text-color);
 }
 
 /* DilYuvam Logo */
@@ -71,10 +99,37 @@
 }
 
 /* Lebens-Planer Logo */
-.lebensplaner-logo img {
-    height: 90px;
-    width: auto;
-    filter: drop-shadow(0 0 15px rgba(255, 59, 48, 0.3));
+.lebensplaner-logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.lebensplaner-logo .logo-icon {
+    width: 52px;
+    height: 52px;
+    background: linear-gradient(135deg, #ff2d55, #ff3b30);
+    border-radius: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    box-shadow: 0 10px 20px rgba(255, 45, 85, 0.3);
+}
+
+.lebensplaner-logo .logo-icon svg {
+    width: 28px;
+    height: 28px;
+}
+
+.lebensplaner-logo .logo-text {
+    font-size: 1.6rem;
+    font-weight: 900;
+    color: #4f46e5;
+    /* Electric Indigo */
+    font-style: italic;
+    letter-spacing: -1px;
+    text-shadow: 0 0 20px rgba(79, 70, 229, 0.3);
 }
 
 /* Admin Dashboard Logo */
@@ -117,7 +172,7 @@
 .admindashboard-logo .logo-text {
     font-size: 1.4rem;
     font-weight: 800;
-    color: #fff;
+    color: var(--text-color);
     letter-spacing: -0.5px;
 }
 
@@ -128,7 +183,7 @@
 .project-info h3 {
     margin-bottom: 8px;
     font-size: 1.2rem;
-    color: #fff;
+    color: var(--text-color);
 }
 
 .project-info p {
@@ -154,7 +209,7 @@
 .tag {
     font-size: 0.7rem;
     padding: 4px 10px;
-    background: rgba(255, 255, 255, 0.03);
+    background: var(--glass-bg);
     border: 1px solid var(--glass-border);
     border-radius: 8px;
     color: var(--text-secondary);
@@ -181,8 +236,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.9);
-    /* Darker overlay for better focus */
+    background: rgba(0, 0, 0, 0.85);
     backdrop-filter: blur(15px);
     z-index: 2000;
     display: flex;
@@ -190,30 +244,31 @@
     align-items: center;
 }
 
+[data-theme='light'] .modal-overlay {
+    background: rgba(255, 255, 255, 0.85);
+}
+
 .modal-content {
     width: 95%;
     max-width: 700px;
-    background: #0d0d12;
-    /* Deep onyx background */
-    border: 3px solid #ffffff;
-    /* Thick solid white border for clear definition */
+    background: var(--bg-color);
+    border: 2px solid var(--glass-border);
     border-radius: 40px;
     padding: 60px;
     position: relative;
     max-height: 85vh;
     overflow-y: auto;
-    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.9);
-    color: #ffffff;
-    /* Pure white text */
+    box-shadow: var(--glass-shadow);
+    color: var(--text-color);
 }
 
 .modal-close {
     position: absolute;
     top: 25px;
     right: 25px;
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    color: #fff;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    color: var(--text-color);
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -227,13 +282,14 @@
 
 .modal-close:hover {
     background: var(--accent-color);
+    color: #fff;
     transform: rotate(90deg);
 }
 
 .modal-header h2 {
     font-size: 3rem;
     margin-bottom: 20px;
-    color: #ffffff;
+    color: var(--text-color);
     font-weight: 950;
     letter-spacing: -2px;
 }
@@ -246,8 +302,7 @@
 }
 
 .modal-body p {
-    color: #cbd5e1;
-    /* Silver text for readability */
+    color: var(--text-secondary);
     font-size: 1.15rem;
     line-height: 1.7;
     font-weight: 400;
@@ -260,8 +315,7 @@
 
 .features-list li {
     padding: 10px 0;
-    color: #e2e8f0;
-    /* Light gray for high contrast */
+    color: var(--text-color);
     font-size: 1.1rem;
     font-weight: 500;
     display: flex;

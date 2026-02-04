@@ -1,12 +1,22 @@
 import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { HiMenuAlt3, HiX } from 'react-icons/hi';
-import { useState } from 'react';
+import { HiMenuAlt3, HiX, HiMoon, HiSun } from 'react-icons/hi';
+import { useState, useEffect } from 'react';
 import './Navbar.css';
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
+    const [theme, setTheme] = useState(localStorage.getItem('theme') || 'dark');
     const location = useLocation();
+
+    useEffect(() => {
+        document.documentElement.setAttribute('data-theme', theme);
+        localStorage.setItem('theme', theme);
+    }, [theme]);
+
+    const toggleTheme = () => {
+        setTheme(theme === 'dark' ? 'light' : 'dark');
+    };
 
     const navLinks = [
         { title: 'Startseite', path: '/' },
@@ -40,11 +50,22 @@ const Navbar = () => {
                             </Link>
                         </li>
                     ))}
+                    <li className="theme-toggle-desktop">
+                        <button onClick={toggleTheme} className="theme-btn" aria-label="Toggle Theme">
+                            {theme === 'dark' ? <HiSun /> : <HiMoon />}
+                        </button>
+                    </li>
                 </ul>
 
                 {/* Mobile Menu Toggle */}
-                <div className="mobile-toggle" onClick={() => setIsOpen(!isOpen)}>
-                    {isOpen ? <HiX /> : <HiMenuAlt3 />}
+                {/* Mobile Controls */}
+                <div className="mobile-controls">
+                    <button onClick={toggleTheme} className="theme-btn mobile-theme-btn" aria-label="Toggle Theme">
+                        {theme === 'dark' ? <HiSun /> : <HiMoon />}
+                    </button>
+                    <div className="mobile-toggle" onClick={() => setIsOpen(!isOpen)}>
+                        {isOpen ? <HiX /> : <HiMenuAlt3 />}
+                    </div>
                 </div>
 
                 {/* Mobile Nav */}

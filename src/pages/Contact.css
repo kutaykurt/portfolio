@@ -13,7 +13,7 @@
     display: grid;
     grid-template-columns: 0.8fr 1.2fr;
     gap: 40px;
-    background: rgba(255, 255, 255, 0.01);
+    background: var(--glass-bg);
     border: 1px solid var(--glass-border);
     border-radius: 40px;
 }
@@ -28,7 +28,7 @@
 
 .contact-info h3 {
     font-size: 2rem;
-    color: #fff;
+    color: var(--text-color);
 }
 
 .info-item {
@@ -40,9 +40,12 @@
 .info-icon {
     width: 48px;
     height: 48px;
-    background: rgba(255, 255, 255, 0.02);
+    background: var(--glass-bg);
     border: 1px solid var(--glass-border);
     border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-size: 1.2rem;
     color: var(--accent-color);
 }
@@ -56,7 +59,7 @@
 
 .info-value {
     font-size: 1.1rem;
-    color: #fff;
+    color: var(--text-color);
 }
 
 .contact-form {
@@ -83,7 +86,18 @@
 .form-group textarea {
     padding: 14px 18px;
     font-size: 0.95rem;
+    background: var(--secondary-bg);
+    border: 1px solid var(--glass-border);
+    color: var(--text-color);
     border-radius: 12px;
+    outline: none;
+    transition: var(--transition);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.1);
 }
 
 .status-msg {
