@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import './Projects.css';
 import dilyuvamLogo from '../assets/dilyuvam_logo.png';
 import adminDashboardImg from '../assets/admin_dashboard.png';
+import lebensPlanerLogo from '../assets/lebens_planer_logo.png';
 
 const projects = [
     {
@@ -87,6 +88,23 @@ const projects = [
         isCustomLogo: true,
         logoType: 'admindashboard',
         link: 'https://admin-dashboard-two-swart-28.vercel.app/'
+    },
+    {
+        title: 'Lebens-Planer',
+        description: 'Ihr persönlicher Begleiter für Struktur und Lebensqualität.',
+        longDescription: 'Der Lebens-Planer ist eine ganzheitliche Plattform zur Organisation Ihres Alltags. Er kombiniert Aufgabenmanagement mit mentalem Wohlbefinden und hilft Ihnen, Ihre Ziele spielerisch zu erreichen.',
+        features: [
+            'Modernes Dashboard für tägliche Aufgaben',
+            'Zielsetzung und Fortschrittstracking',
+            'Gamification-Elemente zur Motivation',
+            'Fokus auf User Experience und klares Design',
+            'Optimiert für mobile und Desktop-Nutzung'
+        ],
+        tags: ['React', 'Productivity', 'UX/UI', 'Gamification'],
+        image: lebensPlanerLogo,
+        isCustomLogo: true,
+        logoType: 'lebensplaner',
+        link: '#'
     }
 ];
 
@@ -130,6 +148,12 @@ const LogoRenderer = ({ type }) => {
                         <div className="bar bar-3"></div>
                     </div>
                     <span className="logo-text">Dashboard</span>
+                </div>
+            );
+        case 'lebensplaner':
+            return (
+                <div className="custom-logo lebensplaner-logo">
+                    <img src={lebensPlanerLogo} alt="Lebens-Planer" />
                 </div>
             );
         default:

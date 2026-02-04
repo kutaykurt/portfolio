@@ -70,6 +70,13 @@
     filter: drop-shadow(0 0 10px rgba(0, 122, 255, 0.2));
 }
 
+/* Lebens-Planer Logo */
+.lebensplaner-logo img {
+    height: 90px;
+    width: auto;
+    filter: drop-shadow(0 0 15px rgba(255, 59, 48, 0.3));
+}
+
 /* Admin Dashboard Logo */
 .admindashboard-logo {
     display: flex;
