@@ -101,7 +101,7 @@ const projects = [
         image: null,
         isCustomLogo: true,
         logoType: 'lebensplaner',
-        link: '#'
+        link: 'https://lebens-planer.vercel.app/'
     }
 ];
 
