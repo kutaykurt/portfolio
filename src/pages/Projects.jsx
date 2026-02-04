@@ -90,15 +90,14 @@ const projects = [
     {
         title: 'Lebens-Planer',
         description: 'Ihr persönlicher Begleiter für Struktur und Lebensqualität.',
-        longDescription: 'Der Lebens-Planer ist eine ganzheitliche Plattform zur Organisation Ihres Alltags. Er kombiniert Aufgabenmanagement mit mentalem Wohlbefinden und hilft Ihnen, Ihre Ziele spielerisch zu erreichen.',
+        longDescription: 'Der Lebens-Planer ist eine ganzheitliche Plattform zur Organisation Ihres Alltags. Er kombiniert Aufgabenmanagement mit mentalem Wohlbefinden und hilft Ihnen, Ihre Ziele effizient zu erreichen.',
         features: [
             'Modernes Dashboard für tägliche Aufgaben',
             'Zielsetzung und Fortschrittstracking',
-            'Gamification-Elemente zur Motivation',
             'Fokus auf User Experience und klares Design',
             'Optimiert für mobile und Desktop-Nutzung'
         ],
-        tags: ['React', 'Productivity', 'UX/UI', 'Gamification'],
+        tags: ['React', 'Productivity', 'UX/UI'],
         image: null,
         isCustomLogo: true,
         logoType: 'lebensplaner',
