@@ -102,6 +102,24 @@ const projects = [
         isCustomLogo: true,
         logoType: 'lebensplaner',
         link: 'https://lebens-planer.vercel.app/'
+    },
+    {
+        title: 'BMW i-Storage',
+        description: 'High-Performance Telemetrie & Monitoring für Hochvoltspeicher.',
+        longDescription: 'Ein professionelles Engineering-Tool zur Überwachung von BMW Hochvoltspeichern. Das System visualisiert komplexe Batteriedaten in Echtzeit und bietet tiefe Einblicke in Zell-Matrix-Spannungen sowie thermisches Management.',
+        features: [
+            'Real-Time Telemetrie mit dynamischem SOC & SOH Tracking',
+            'Live-Ladekurven (kW vs SOC) Simulation via Recharts',
+            'Zell-Matrix Visualisierung für 96 Einzelzellen (96S)',
+            'Thermal Safety Management & Risiko-Analyse',
+            'Data Science Bridge: Standardisierter Telemetrie-Export für Python',
+            'Entwickelt mit React 19 und TypeScript'
+        ],
+        tags: ['React 19', 'TypeScript', 'Recharts', 'Automotive'],
+        image: null,
+        isCustomLogo: true,
+        logoType: 'bmw-storage',
+        link: 'https://bmw-high-voltage-storages-94lgqdd4y-kutays-projects-a2ae982b.vercel.app/'
     }
 ];
 
@@ -164,6 +182,27 @@ const LogoRenderer = ({ type }) => {
                         </svg>
                     </div>
                     <span className="logo-text">LEBENS-PLANER</span>
+                </div>
+            );
+        case 'bmw-storage':
+            return (
+                <div className="custom-logo bmw-logo">
+                    <div className="bmw-header">
+                        <span className="bmw-brand">BMW <span className="bmw-i">i</span></span>
+                        <span className="bmw-sep">-</span>
+                        <span className="bmw-product">STORAGE</span>
+                    </div>
+                    <div className="bmw-dashboard-preview">
+                        <div className="bmw-gauge">
+                            <div className="gauge-fill"></div>
+                            <span className="gauge-val">90%</span>
+                        </div>
+                        <div className="bmw-lines">
+                            <div className="bmw-line"></div>
+                            <div className="bmw-line"></div>
+                            <div className="bmw-line"></div>
+                        </div>
+                    </div>
                 </div>
             );
         default:
