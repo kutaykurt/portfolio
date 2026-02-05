@@ -234,7 +234,7 @@
     font-weight: 900;
     font-size: 1.4rem;
     letter-spacing: 1px;
-    color: #fff;
+    color: var(--text-color);
 }
 
 .bmw-i {
@@ -244,7 +244,8 @@
 
 .bmw-sep {
     margin: 0 5px;
-    color: rgba(255, 255, 255, 0.3);
+    color: var(--text-secondary);
+    opacity: 0.3;
 }
 
 .bmw-dashboard-preview {
@@ -252,9 +253,9 @@
     align-items: center;
     gap: 20px;
     padding: 10px 20px;
-    background: rgba(0, 0, 0, 0.2);
+    background: var(--secondary-bg);
     border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--glass-border);
 }
 
 .bmw-gauge {
@@ -262,7 +263,7 @@
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    border: 4px solid rgba(255, 255, 255, 0.1);
+    border: 4px solid var(--glass-border);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -283,7 +284,7 @@
 .gauge-val {
     font-size: 0.9rem;
     font-weight: 700;
-    color: #fff;
+    color: var(--text-color);
 }
 
 .bmw-lines {
