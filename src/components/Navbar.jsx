@@ -29,7 +29,7 @@ const Navbar = () => {
         <nav className="navbar glass">
             <div className="nav-container">
                 <Link to="/" className="nav-logo">
-                    Kutay<span>Kurt</span>
+                    Kutay <span>Kurt</span>
                 </Link>
 
                 {/* Desktop Nav */}

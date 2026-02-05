@@ -18,7 +18,7 @@
 .nav-logo {
     font-size: 1.4rem;
     font-weight: 900;
-    color: #fff;
+    color: var(--text-color);
     letter-spacing: -0.5px;
 }
 
@@ -65,7 +65,7 @@
     display: none;
     font-size: 1.5rem;
     cursor: pointer;
-    color: #fff;
+    color: var(--text-color);
 }
 
 .mobile-links {
